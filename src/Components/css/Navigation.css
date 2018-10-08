@@ -1,0 +1,22 @@
+.navigation {
+  width: 100vw;
+  max-height: 10%;
+  background: #A0C0C4;
+  bottom: 0;
+  right: 0;
+  padding: 10px; }
+  .navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly; }
+    .navigation ul li {
+      height: 100%;
+      width: auto;
+      padding: 10px; }
+      .navigation ul li img {
+        width: 100%;
+        height: 100%; }

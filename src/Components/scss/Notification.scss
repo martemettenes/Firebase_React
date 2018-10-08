@@ -1,13 +1,13 @@
 $padding: 10px;
-$col-darkblue: #485472;
-$col-medblue: #7D8DA9;
+$col-darkblue: #5D9095;
+$col-medblue: #A0C0C4;
+$col-lightblue: #C8DCDE;
 
 .notification {
     width: 100%;
     min-width: 300px;
     height: 50px;
-    color: white;
-    border: 2px solid $col-darkblue;
+    background: $col-medblue;
     padding: $padding;
     display: flex;
     justify-content: space-between;
@@ -18,10 +18,8 @@ $col-medblue: #7D8DA9;
 .notification-category,
 .notification-time,
 .notification-assigned{
-    margin: 0;
+    margin: auto 0;
     font-weight: bold;
-    text-overflow: ellipsis;
-    display: inline;
 }
 
 .button-container{
@@ -36,10 +34,14 @@ $col-medblue: #7D8DA9;
 .notification-btn-complete {
     -webkit-appearance: none;
     border: none;
-    background: $col-darkblue;
-    color: white;
     margin: 0;
     padding: 5px;
     height: 100%;
     cursor: pointer;
+    background-color: unset;
+}
+
+.icon-img{
+    height: 100%;
+    width: auto;
 }

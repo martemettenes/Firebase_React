@@ -1,6 +1,7 @@
 $padding: 10px;
-$col-darkblue: #485472;
-
+$col-darkblue: #5D9095;
+$col-medblue: #A0C0C4;
+$col-lightblue: #C8DCDE;
 
 .pet-info{
     display: flex;
@@ -8,9 +9,13 @@ $col-darkblue: #485472;
 }
 
 .pet-img{
-    width: 20%;
-    background: $col-darkblue;
-    border: none;
+    width: 20vw;
+    padding: $padding;
+
+    img{
+        max-height: 100%;
+        width: auto;
+    }
 }
 
 .pet-info-section{

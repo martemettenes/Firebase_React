@@ -3,9 +3,11 @@
   padding-bottom: 10px; }
 
 .pet-img {
-  width: 20%;
-  background: #485472;
-  border: none; }
+  width: 20vw;
+  padding: 10px; }
+  .pet-img img {
+    max-height: 100%;
+    width: auto; }
 
 .pet-info-section {
   margin-left: 10px;
@@ -13,7 +15,7 @@
 
 .pet-name {
   width: 100%;
-  border-bottom: 2px solid #485472;
+  border-bottom: 2px solid #5D9095;
   margin: 0; }
 
 .pet-gender,
