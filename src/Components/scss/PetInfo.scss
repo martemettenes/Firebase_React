@@ -1,0 +1,34 @@
+$padding: 10px;
+$col-darkblue: #485472;
+
+
+.pet-info{
+    display: flex;
+    padding-bottom: $padding;
+}
+
+.pet-img{
+    width: 20%;
+    background: $col-darkblue;
+    border: none;
+}
+
+.pet-info-section{
+    margin-left: $padding;
+    width: 80%;
+}
+
+.pet-name{
+    width: 100%;
+    border-bottom: 2px solid $col-darkblue;
+    margin: 0;
+}
+
+.pet-gender,
+.pet-breed,
+.pet-dob{
+    display: block;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+}

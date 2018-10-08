@@ -1,0 +1,25 @@
+.pet-info {
+  display: flex;
+  padding-bottom: 10px; }
+
+.pet-img {
+  width: 20%;
+  background: #485472;
+  border: none; }
+
+.pet-info-section {
+  margin-left: 10px;
+  width: 80%; }
+
+.pet-name {
+  width: 100%;
+  border-bottom: 2px solid #485472;
+  margin: 0; }
+
+.pet-gender,
+.pet-breed,
+.pet-dob {
+  display: block;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px; }
