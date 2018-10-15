@@ -6,7 +6,7 @@ function PetInfo(props){
     return (
         <div id="pet-info" className="pet-info">
             <div className="pet-img">
-                <img src={require("../img/012-pet.svg")} alt="Pet image"/>
+                <img src={require("../img/012-pet.svg")} alt="Pet profile"/>
             </div>
             <div className="pet-info-section">
                 <h1 className="pet-name"> {props.name} </h1>

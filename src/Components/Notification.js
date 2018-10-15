@@ -8,13 +8,13 @@ function Notification(props){
         <p className="notification-time"> {props.time} </p>
         <p className="notification-assigned"> {props.assigned} </p>
         <div className="button-container">
-            <button className="notification-btn-edit">
+            <button className="notification-btn-edit" onClick={props.editTask}>
                 <img className="icon-img" src={require("../img/019-design.svg")} alt="Tools, Settings Icon"/>
             </button>
-            <button className="notification-btn-delete">
+            <button className="notification-btn-delete" onClick={props.deleteTask}>
                 <img className="icon-img" src={require("../img/018-delete.svg")} alt="Trash can, Delete Button Icon"/>
             </button>
-            <button className="notification-btn-complete">
+            <button className="notification-btn-complete" onClick={props.completeTask}>
                 <img className="icon-img" src={require("../img/017-tick.svg")} alt="Check, complete button Icon"/>
             </button>
         </div>
