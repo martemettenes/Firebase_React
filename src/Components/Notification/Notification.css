@@ -2,7 +2,7 @@
   width: 100%;
   min-width: 300px;
   height: 50px;
-  background: #A0C0C4;
+  background: white;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -12,8 +12,7 @@
 .notification-category,
 .notification-time,
 .notification-assigned {
-  margin: auto 0;
-  font-weight: bold; }
+  margin: auto 0; }
 
 .button-container {
   display: flex;
@@ -26,6 +25,7 @@
 .notification-btn-complete {
   -webkit-appearance: none;
   border: none;
+  border-radius: 50px;
   margin: 0;
   padding: 5px;
   height: 100%;

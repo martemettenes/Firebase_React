@@ -7,7 +7,7 @@ $col-lightblue: #C8DCDE;
     width: 100%;
     min-width: 300px;
     height: 50px;
-    background: $col-medblue;
+    background: white;
     padding: $padding;
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,6 @@ $col-lightblue: #C8DCDE;
 .notification-time,
 .notification-assigned{
     margin: auto 0;
-    font-weight: bold;
 }
 
 .button-container{
@@ -34,6 +33,7 @@ $col-lightblue: #C8DCDE;
 .notification-btn-complete {
     -webkit-appearance: none;
     border: none;
+    border-radius: 50px;
     margin: 0;
     padding: 5px;
     height: 100%;

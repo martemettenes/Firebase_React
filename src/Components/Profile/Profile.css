@@ -1,27 +1,30 @@
-.pet-info {
+.profile-info {
   display: flex;
   padding-bottom: 10px; }
 
-.pet-img {
+.profile-img {
   width: 20vw;
   padding: 10px; }
-  .pet-img img {
+  .profile-img img {
     max-height: 100%;
     width: auto; }
 
-.pet-info-section {
+.profile-info-section {
   margin-left: 10px;
   width: 80%; }
 
-.pet-name {
+.profile-name {
   width: 100%;
   border-bottom: 2px solid #5D9095;
   margin: 0; }
 
-.pet-gender,
-.pet-breed,
-.pet-dob {
+.profile-dob {
   display: block;
   padding: 0;
-  margin: 0;
-  margin-bottom: 5px; }
+  margin: 0; }
+
+.profile-gender,
+.profile-breed {
+  display: inline;
+  padding: 0;
+  margin: 0; }

@@ -3,12 +3,12 @@ $col-darkblue: #5D9095;
 $col-medblue: #A0C0C4;
 $col-lightblue: #C8DCDE;
 
-.pet-info{
+.profile-info{
     display: flex;
     padding-bottom: $padding;
 }
 
-.pet-img{
+.profile-img{
     width: 20vw;
     padding: $padding;
 
@@ -18,22 +18,26 @@ $col-lightblue: #C8DCDE;
     }
 }
 
-.pet-info-section{
+.profile-info-section{
     margin-left: $padding;
     width: 80%;
 }
 
-.pet-name{
+.profile-name{
     width: 100%;
     border-bottom: 2px solid $col-darkblue;
     margin: 0;
 }
 
-.pet-gender,
-.pet-breed,
-.pet-dob{
+.profile-dob{
     display: block;
     padding: 0;
     margin: 0;
-    margin-bottom: 5px;
+}
+
+.profile-gender,
+.profile-breed{
+    display: inline;
+    padding: 0;
+    margin: 0;
 }
