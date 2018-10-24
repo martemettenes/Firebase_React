@@ -1,0 +1,13 @@
+@import '../variables.scss';
+
+
+.home{
+    width: 100%;
+    height: 100%;
+
+    .dog-icon{
+        width: 20%;
+        display: block;
+        margin: $xxl-padding auto;
+    }
+}

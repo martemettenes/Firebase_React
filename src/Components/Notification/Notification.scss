@@ -1,17 +1,26 @@
-$padding: 10px;
-$col-darkblue: #5D9095;
-$col-medblue: #A0C0C4;
-$col-lightblue: #C8DCDE;
+@import '../variables.scss';
+
+
+
+%icon-style-shared{
+    -webkit-appearance: none;
+    padding: 0;
+    border: none;
+    margin: 0;
+    height: 100%;
+    width: 20px;
+    cursor: pointer;
+    background-color: unset;
+}
+
 
 .notification {
     width: 100%;
-    min-width: 300px;
-    height: 50px;
+    height: 40px;
     background: white;
     padding: $padding;
     display: flex;
     justify-content: space-between;
-    align-content: center;
     margin-top: $padding;
 }
 
@@ -22,26 +31,26 @@ $col-lightblue: #C8DCDE;
 }
 
 .button-container{
+    width: auto;
     display: flex;
-    justify-content: space-between;
-    width: 30%;
-    align-items: flex-end;
 }
 
 .notification-btn-edit,
 .notification-btn-delete,
 .notification-btn-complete {
-    -webkit-appearance: none;
-    border: none;
-    border-radius: 50px;
-    margin: 0;
-    padding: 5px;
-    height: 100%;
-    cursor: pointer;
-    background-color: unset;
+    @extend %icon-style-shared;
+    float: right;
+    margin-left: 5px;
+}
+
+.notification-category{
+    @extend %icon-style-shared;
+    float: left;
+
+
 }
 
 .icon-img{
-    height: 100%;
-    width: auto;
+    -webkit-appearance: none;
+    margin: auto;
 }

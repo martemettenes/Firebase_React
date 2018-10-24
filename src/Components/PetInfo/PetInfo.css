@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box; }
+
+h1 {
+  color: #5D9095;
+  text-align: center;
+  font-size: 30px;
+  width: 100%; }
+
+.pet-info {
+  margin: 20px 0;
+  padding: 20px;
+  border: 2px solid #5D9095; }
+  .pet-info .info-section {
+    display: flex;
+    flex-wrap: wrap; }
+    .pet-info .info-section p {
+      margin: 0;
+      margin-bottom: 10px; }
+    .pet-info .info-section h1, .pet-info .info-section h2, .pet-info .info-section h3, .pet-info .info-section h4, .pet-info .info-section h5, .pet-info .info-section h6 {
+      width: 100%; }
+    .pet-info .info-section .p-title {
+      color: #5D9095;
+      text-align: left; }
+    .pet-info .info-section .p-info {
+      color: black;
+      text-align: right; }
+    .pet-info .info-section .half {
+      width: 50%; }
+    .pet-info .info-section .full {
+      width: 100%;
+      text-align: left; }

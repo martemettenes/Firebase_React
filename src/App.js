@@ -5,43 +5,87 @@ import './Components/Navigation/Navigation.css';
 // Components
 import Dashboard from './Components/Dashboard/Dashboard';
 import Navigation from './Components/Navigation/Navigation';
-import Profile from './Components/Profile/Profile';
-// Data
-import { pets, people, walk, meds, meal, appointments } from './app-data';
+import CreateTask from './Components/CreateTask/CreateTask';
+import Settings from './Components/Settings/Settings';
+import Profiles from './Components/Profiles/Profiles';
+import Home from './Components/Home/Home';
+
+localStorage.setItem('key', 'yuuge value');
+
+console.log( localStorage.getItem('key') );
 
 class App extends Component {
+  // State is only available in components that extends a class.
+  state = {
+    showHome: false,
+    showDashboard: false,
+    showCreateTask: true,
+    showPack: false,
+    showSettings: false
+  }
 
   render() {
 
-    // Animation to buttons
-    const activeBtn = (event) => {
+    const toggleComponent = (event) => {
       let element = event.target;
-      console.log(event.target);
+      console.log(element);
+
       element.classList.add('nav-clicked');
-      element.classList.toggle('nav-active');
+          setTimeout(() => {
+            element.classList.remove('nav-clicked');
+          }, 310);
 
-      setTimeout(() => {
-        element.classList.remove('nav-clicked');
-      }, 200);
-  }
+      switch(element.id) {
 
-      // Complete events
-      const completeEvent = (event) => {
-        let element = event.target;
-        console.log(event.target);
-        element.classList.toggle('completed');
+        case 'home':
+          this.setState({showHome: true, showDashboard: false, showCreateTask: false, showPack: false, showSettings: false})
+          break;
+  
+        case 'tasks':
+          this.setState({showHome: false, showDashboard: true, showCreateTask: false, showPack: false, showSettings: false})
+          break;
+
+        case 'createTask':
+          this.setState({showHome: false, showDashboard: false, showCreateTask: true, showPack: false, showSettings: false})
+          break;
+
+        case 'pack':
+          this.setState({showHome: false, showDashboard: false, showCreateTask: false, showPack: true, showSettings: false})
+          break;
+
+        case 'settings':
+          this.setState({showHome: false, showDashboard: false, showCreateTask: false, showPack: false, showSettings: true})
+          break;
+
+        default:
+          this.setState({showHome: true, showDashboard: false, showCreateTask: false, showPack: false, showSettings: false})
+      }
     }
 
+/// Return ///
 
-    return (
+return (
       <div className="App">
+
         <div className="content">
-          <Profile name={pets.mara.name} breed={pets.mara.breed} gender={pets.mara.gender} dob={pets.mara.dob} />
-          <Dashboard click={(event) => completeEvent(event)} />
+          {(this.state.showHome === true) ? 
+            <Home  /> : null }
+          {(this.state.showDashboard === true) ? 
+            <Dashboard  /> : null }
+          {(this.state.showCreateTask === true) ?
+            <CreateTask /> : null }
+          {(this.state.showSettings === true) ?
+            <Settings title="Instillinger" /> : null }
+            {(this.state.showPack === true) ?
+            <Profiles /> : null }
         </div>
-        <Navigation change={(event) => activeBtn(event)} />
+
+        <Navigation click={(event) => toggleComponent(event)} />
+
       </div>
     );
+
+    
   }
 }
 

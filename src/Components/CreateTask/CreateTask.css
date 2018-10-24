@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box; }
+
+h1 {
+  color: #5D9095;
+  text-align: center;
+  font-size: 30px;
+  width: 100%; }
+
+.create-task-form input[type="text"], .create-task-form input[type="time"], .create-task-form select, .create-task-form textarea, .create-task-form .submit-btn {
+  padding: 10px;
+  margin: 10px 0;
+  background: white;
+  font-size: 16px; }
+
+.create-task-form {
+  width: 100%;
+  font-size: 16px; }
+  .create-task-form input[type="text"], .create-task-form input[type="time"], .create-task-form select, .create-task-form textarea {
+    width: 100%; }
+  .create-task-form input[type="radio"] {
+    margin: 10px 0; }
+  .create-task-form textarea {
+    width: 100%;
+    height: 80px; }
+  .create-task-form h4 {
+    width: 100%;
+    border-bottom: 1px solid #5D9095; }
+  .create-task-form p {
+    margin-bottom: 0; }
+  .create-task-form .submit-btn {
+    display: block;
+    margin: 20px 0;
+    width: 100%; }

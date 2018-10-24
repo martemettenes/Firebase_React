@@ -7,6 +7,10 @@ h1 {
   font-size: 30px;
   width: 100%; }
 
-.dashboard {
+.home {
   width: 100%;
-  height: auto; }
+  height: 100%; }
+  .home .dog-icon {
+    width: 20%;
+    display: block;
+    margin: 45px auto; }

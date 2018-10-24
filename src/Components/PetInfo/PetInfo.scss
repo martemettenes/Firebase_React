@@ -1,0 +1,45 @@
+@import '../variables.scss';
+
+.pet-info {
+    margin: $l-padding 0;
+    padding: $l-padding;
+    //background: white;
+    border: $top-border;
+
+    .info-section {
+        //border-bottom: $top-border;
+        display: flex;
+        flex-wrap: wrap;
+        
+
+        p {
+            margin: 0;
+            margin-bottom: $padding;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            width: 100%;
+        }
+    
+    
+    
+        .p-title{
+            color: $col-darkblue;
+            text-align: left;
+        }
+        
+        .p-info {
+            color: black;
+            text-align: right;
+        }
+        
+        .half{
+            width: 50%;
+        }
+        
+        .full{
+            width: 100%;
+            text-align: left;
+        }
+    }
+}

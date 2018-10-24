@@ -1,10 +1,19 @@
+* {
+  box-sizing: border-box; }
+
+h1 {
+  color: #5D9095;
+  text-align: center;
+  font-size: 30px;
+  width: 100%; }
+
 .navigation ul, .navigation ul li img {
   height: 100%;
   width: 100%; }
 
 .navigation {
   width: 100vw;
-  max-height: 10%;
+  height: 10vh;
   background: #A0C0C4;
   bottom: 0;
   right: 0; }
@@ -17,7 +26,7 @@
     .navigation ul li {
       height: 100%;
       width: 20%;
-      padding: 20px; }
+      padding: 15px; }
       .navigation ul li img {
         pointer-events: none; }
 
@@ -25,16 +34,14 @@
   background: #A0C0C4; }
 
 .nav-clicked {
-  animation: zoom 0.2s ease;
+  animation: zoom 0.3s ease;
   animation-iteration-count: 1; }
 
 .nav-active {
   background: #5D9095; }
 
 @keyframes zoom {
-  0% {
-    padding: 20px; }
+  0% { }
   50% {
-    padding: 15px; }
-  100% {
-    padding: 20px; } }
+    padding: 10px; }
+  100% { } }

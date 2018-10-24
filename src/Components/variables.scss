@@ -1,0 +1,31 @@
+
+$padding: 10px;
+$med-padding: 15px;
+$l-padding: 20px;
+$xl-padding: 30px;
+$xxl-padding: 45px;
+
+$col-darkblue: #5D9095;
+$col-medblue: #A0C0C4;
+$col-lightblue: #C8DCDE;
+
+$xs-font-s: 8px;
+$s-font-s: 12px;
+$m-font-s: 16px;
+$l-font-s: 20px;
+$xl-font-s: 30px;
+$xxl-font-s: 45px;
+
+$top-border: 2px solid $col-darkblue;
+
+
+* {
+    box-sizing: border-box;
+}
+
+h1{
+    color: $col-darkblue;
+    text-align: center;
+    font-size: $xl-font-s;
+    width: 100%;
+}
