@@ -121,7 +121,7 @@ class CreateTask extends Component {
         <p> Notat </p>
         <textarea id="note" name="note" type="text" placeholder="Notat" />
 
-        <button id="submit" name="submit" className="submit-btn" type="submit" value="Lag oppgave" form="create-task" onClick={(event) => createTaskHandler(event)}> Lag oppgave </button>
+        <button id="submit" name="submit" className="submit-btn" type="submit" value="Lag oppgave" form="create-task" onClick={createTaskHandler}> Lag oppgave </button>
 
       </form>
 
