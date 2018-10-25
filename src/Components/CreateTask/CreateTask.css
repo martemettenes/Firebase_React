@@ -7,7 +7,7 @@ h1 {
   font-size: 30px;
   width: 100%; }
 
-.create-task-form input[type="text"], .create-task-form input[type="time"], .create-task-form select, .create-task-form textarea, .create-task-form .submit-btn {
+.create-task-form input[type="text"], .create-task-form input[type="time"], .create-task-form input[type="date"], .create-task-form select, .create-task-form textarea, .create-task-form .submit-btn {
   padding: 10px;
   margin: 10px 0;
   background: white;
@@ -16,7 +16,7 @@ h1 {
 .create-task-form {
   width: 100%;
   font-size: 16px; }
-  .create-task-form input[type="text"], .create-task-form input[type="time"], .create-task-form select, .create-task-form textarea {
+  .create-task-form input[type="text"], .create-task-form input[type="time"], .create-task-form input[type="date"], .create-task-form select, .create-task-form textarea {
     width: 100%; }
   .create-task-form input[type="radio"] {
     margin: 10px 0; }

@@ -45,3 +45,6 @@ const Navigation = (props) => {
 }
 
 export default Navigation;
+
+
+// className={(this.state.isActivePage === 'pack'  ? 'active' : '')}

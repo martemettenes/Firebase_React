@@ -9,20 +9,51 @@ import CreateTask from './Components/CreateTask/CreateTask';
 import Settings from './Components/Settings/Settings';
 import Profiles from './Components/Profiles/Profiles';
 import Home from './Components/Home/Home';
+// Get data
+import { tasks } from './tasks-data';
 
-localStorage.setItem('key', 'yuuge value');
-
-console.log( localStorage.getItem('key') );
 
 class App extends Component {
-  // State is only available in components that extends a class.
   state = {
     showHome: false,
-    showDashboard: false,
-    showCreateTask: true,
+    showDashboard: true,
+    showCreateTask: false,
     showPack: false,
-    showSettings: false
+    showSettings: false,
+    tasks: [...tasks]
   }
+
+
+    // Method: create new task and add to state 
+    createTaskHandler = ( event ) => {
+      event.preventDefault();
+      const form = event.target;
+  
+      const tasks = this.state.tasks;
+  
+      const timestamp = Date.now();
+  
+      const task = {
+        id: 'task' + timestamp,
+        category: form.type.value,
+        //alt: '',
+        note: form.note.value,
+        assigned: form.assigned.value,
+        pet: form.pet.value,
+        time: form.time.value,
+        repeat: form.repeat.value,
+        completedTask: false
+      }
+  
+      tasks.push(task)
+  
+      // Set state
+      this.setState({ tasks : tasks });
+      console.log('this.state.tasks' + this.state.tasks);
+  
+      localStorage.setItem('task', JSON.stringify(task));
+      console.log(localStorage.getItem('task') );
+    }
 
   render() {
 
@@ -71,9 +102,13 @@ return (
           {(this.state.showHome === true) ? 
             <Home  /> : null }
           {(this.state.showDashboard === true) ? 
-            <Dashboard  /> : null }
+            <Dashboard
+              tasks={this.state.tasks}  /> : null }
           {(this.state.showCreateTask === true) ?
-            <CreateTask /> : null }
+            <CreateTask 
+              tasks={this.state.tasks}
+              createTask={this.createTaskHandler.bind(this)}
+            /> : null }
           {(this.state.showSettings === true) ?
             <Settings title="Instillinger" /> : null }
             {(this.state.showPack === true) ?
