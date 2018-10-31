@@ -11,7 +11,8 @@ const tasks = [
             assigned: people.marte.name,
             pet: pets.mara.name,
             time: '10:00',
-            repeat: true,
+            day: "today",
+            repeat: "false",
             completedTask: false,
         },
         {
@@ -22,7 +23,8 @@ const tasks = [
             assigned: people.frida.name,
             pet: pets.mara.name,
             time: '09:00',
-            repeat: true,
+            day: "",
+            repeat: "true",
             completedTask: false,
         },
         {
@@ -33,7 +35,8 @@ const tasks = [
             assigned: people.everyone.name,
             pet: pets.vinnie.name,
             time: '09:15',
-            repeat: true,
+            day: "",
+            repeat: "true",
             completedTask: false,
         }
     ]

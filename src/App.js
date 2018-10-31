@@ -28,11 +28,9 @@ class App extends Component {
     createTaskHandler = ( event ) => {
       event.preventDefault();
       const form = event.target;
-  
       const tasks = this.state.tasks;
-  
       const timestamp = Date.now();
-  
+
       const task = {
         id: 'task' + timestamp,
         category: form.type.value,
@@ -40,6 +38,7 @@ class App extends Component {
         note: form.note.value,
         assigned: form.assigned.value,
         pet: form.pet.value,
+        day: form.day.value,
         time: form.time.value,
         repeat: form.repeat.value,
         completedTask: false
@@ -53,6 +52,8 @@ class App extends Component {
   
       localStorage.setItem('task', JSON.stringify(task));
       console.log(localStorage.getItem('task') );
+
+      form.reset();
     }
 
   render() {
