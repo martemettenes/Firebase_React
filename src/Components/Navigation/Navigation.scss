@@ -10,50 +10,40 @@
     padding: $property;
 }
 
-%size-shared{
-    height: 100%;
-    width: 100%;
-}
 
-.navigation{
-    width: 100vw;
-    height: 10vh;
+nav {
     background: $col-medblue;
-    bottom: 0;
-    right: 0;
+    height: 80px;
 
-        ul{
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            @extend %size-shared;
-            display: flex;
-            justify-content: space-evenly;
-
-                li{
-                    height: 100%;
-                    //width: 200px / 1000px * 100%;
-                    width: 20%;
-                    padding: $med-padding;
-
-                        img{
-                            @extend %size-shared;
-                            pointer-events: none;
-                        }
-                    }
+        ul {
+        //     height: 100%;
+        list-style: none;
+        //     margin: 0;
+        //     padding: 0;
+        //     display: flex;
+        //     justify-content: space-evenly;
         }
+
+        //         li {
+        //             height: 100%;
+
+        //                 img {
+        //                     pointer-events: none;
+        //                 }
+        //             }
+        // }
 }
 
-.completed{
+.completed {
     background: $col-medblue;
 }
 
-.nav-clicked{
+.nav-clicked {
     animation: zoom 0.3s ease;
     animation-iteration-count: 1;
 }
 
-.nav-active{
+.nav-active {
     background: $col-darkblue;
 }
 

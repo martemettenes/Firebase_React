@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+
 import './Dashboard.css';
 
 // Components
@@ -6,7 +7,8 @@ import Notification from '../Notification/Notification';
 
 class Dashboard extends Component {
     state = {
-        completedTask: false
+        completedTask: false,
+
     }
 
     render() {
@@ -18,99 +20,143 @@ class Dashboard extends Component {
     // The new variable where we will store the tasks-output(UI) from state.
     let tasksList = null;
     let tasksListReoccuring = null;
-    let tasksListThursday = null;
+
+    // console.log('this length' + Object.keys(this.props.tasks));
     
-    // Create Notification Component with Tasks data
-    if (this.props.tasks.length >= 1){
-        console.log('once');
-        tasksList = (
-        <>
-            {this.props.tasks.map((tasks) => {
-                if (tasks.day === "today") {
-                return (
-                    <Notification
-                    key={tasks.id}
-                    category={tasks.category}
-                    altCategory= {tasks.alt}
-                    time={tasks.time}
-                    assigned={tasks.assigned}
-                    assignedPet={tasks.pet}
-
-                    completeTask={(event) => completeEvent(event, tasks)}
-                    deleteTask ={(event) => deleteEvent(event, tasks)}
-                    categoryEdit={require("../../img/pencil.svg")}
-                    categoryDelete={require("../../img/delete.svg")}
-                    categoryComplete={(tasks.completedTask === false) ? tick : tickCheck } />
-                )
-            } else {
-                return (null)
-            }
-            })}
-        </>
-        )
-        console.log(this.props.tasks.length);
-    }
-
-    // Place reoccuring notifications under "Hver dag"
+    // Map through all objects in Tasks Object on database
     if (this.props.tasks.length >= 1){
         console.log('reoccuring');
+        const {tasks} = this.props
         tasksListReoccuring = (
-        <>
-            {this.props.tasks.map((tasks) => {
-                if (tasks.repeat === "true") {
-                return (
-                    <Notification
-                    key={tasks.id}
-                    category={tasks.category}
-                    altCategory= {tasks.alt}
-                    time={tasks.time}
-                    assigned={tasks.assigned}
-                    assignedPet={tasks.pet}
+            <>
+                {tasks.map((tasks) => {
+    
+                    if (tasks.repeat === "true") {
+                    return (
+                        <Notification
+                        key={tasks.id}
+                        category={tasks.category}
+                        altCategory= {tasks.alt}
+                        time={tasks.time}
+                        assigned={tasks.assigned}
+                        assignedPet={tasks.pet}
+    
+                        completeTask={(event) => completeEvent(event, tasks)}
+                        deleteTask ={(event) => deleteEvent(event, tasks)}
+                        categoryEdit={require("../../img/pencil.svg")}
+                        categoryDelete={require("../../img/delete.svg")}
+                        categoryComplete={(tasks.completedTask === false) ? tick : tickCheck } />
+                    )
+                } else {
+                    return (null)
+                }
+                })}
+            </>
+            )
+            console.log(this.props.tasks.length);
+        }
 
-                    completeTask={(event) => completeEvent(event, tasks)}
-                    deleteTask ={(event) => deleteEvent(event, tasks)}
-                    categoryEdit={require("../../img/pencil.svg")}
-                    categoryDelete={require("../../img/delete.svg")}
-                    categoryComplete={(tasks.completedTask === false) ? tick : tickCheck } />
+        if (this.props.tasks.length >= 1){
+            console.log('once');
+            tasksList = (
+                <>
+                    {this.props.tasks.map((tasks) => {
+        
+                        if (tasks.repeat === "false") {
+                        return (
+                            <Notification
+                            key={tasks.id}
+                            category={tasks.category}
+                            altCategory= {tasks.alt}
+                            time={tasks.time}
+                            assigned={tasks.assigned}
+                            assignedPet={tasks.pet}
+        
+                            completeTask={(event) => completeEvent(event, tasks)}
+                            deleteTask ={(event) => deleteEvent(event, tasks)}
+                            categoryEdit={require("../../img/pencil.svg")}
+                            categoryDelete={require("../../img/delete.svg")}
+                            categoryComplete={(tasks.completedTask === false) ? tick : tickCheck } />
+                        )
+                    } else {
+                        return (null)
+                    }
+                    })}
+                </>
                 )
-            } else {
-                return (null)
+                console.log(this.props.tasks.length);
             }
-            })}
-        </>
-        )
-        console.log(this.props.tasks.length);
-    }
 
-    if (this.props.tasks.length >= 1){
-        console.log('Thursday');
-        tasksListThursday = (
-        <>
-            {this.props.tasks.map((tasks) => {
-                if (tasks.day === "thursday") {
-                return (
-                    <Notification
-                    key={tasks.id}
-                    category={tasks.category}
-                    altCategory= {tasks.alt}
-                    time={tasks.time}
-                    assigned={tasks.assigned}
-                    assignedPet={tasks.pet}
 
-                    completeTask={(event) => completeEvent(event, tasks)}
-                    deleteTask ={(event) => deleteEvent(event, tasks)}
-                    categoryEdit={require("../../img/pencil.svg")}
-                    categoryDelete={require("../../img/delete.svg")}
-                    categoryComplete={(tasks.completedTask === false) ? tick : tickCheck } />
-                )
-            } else {
-                return (null)
-            }
-            })}
-        </>
-        )
-        console.log(this.props.tasks.length);
-    }
+
+    
+    // // Create Notification Component with Tasks data
+    // if (this.props.tasks.length >= 1){
+    //     console.log('once');
+    //     tasksList = (
+    //     <>
+    //         {this.props.tasks.keys.map((tasks) => {
+
+    //             if (tasks.repeat === "false") {
+    //             return (
+    //                 <Notification
+    //                 key={tasks.id}
+    //                 category={tasks.category}
+    //                 altCategory= {tasks.alt}
+    //                 time={tasks.time}
+    //                 assigned={tasks.assigned}
+    //                 assignedPet={tasks.pet}
+
+    //                 completeTask={(event) => completeEvent(event, tasks)}
+    //                 deleteTask ={(event) => deleteEvent(event, tasks)}
+    //                 categoryEdit={require("../../img/pencil.svg")}
+    //                 categoryDelete={require("../../img/delete.svg")}
+    //                 categoryComplete={(tasks.completedTask === false) ? tick : tickCheck } />
+    //             )
+    //         } else {
+    //             return (null)
+    //         }
+    //         })}
+    //     </>
+    //     )
+    //     console.log(this.props.tasks.length);
+    // }
+
+
+    // // Place reoccuring notifications under "Hver dag"
+    // if (this.props.tasks.length >= 1){
+    //     console.log('reoccuring');
+    //     tasksListReoccuring = (
+    //     <>
+    //         {this.props.tasks.map((tasks) => {
+
+
+    //             if (tasks.repeat === "true") {
+    //             return (
+    //                 <Notification
+    //                 key={tasks.id}
+    //                 category={tasks.category}
+    //                 altCategory= {tasks.alt}
+    //                 time={tasks.time}
+    //                 assigned={tasks.assigned}
+    //                 assignedPet={tasks.pet}
+
+    //                 completeTask={(event) => completeEvent(event, tasks)}
+    //                 deleteTask ={(event) => deleteEvent(event, tasks)}
+    //                 categoryEdit={require("../../img/pencil.svg")}
+    //                 categoryDelete={require("../../img/delete.svg")}
+    //                 categoryComplete={(tasks.completedTask === false) ? tick : tickCheck } />
+    //             )
+    //         } else {
+    //             return (null)
+    //         }
+    //         })}
+    //     </>
+    //     )
+    //     console.log(this.props.tasks.length);
+    // }
+
+
 
 
     // Tick off a task
@@ -150,12 +196,10 @@ class Dashboard extends Component {
     return (
         <div id="dashboard" className="dashboard">
             <h1> Gjøremål </h1>
-            <p> Idag</p>
+            <p> Engangstilfeller </p>
             {tasksList}
-            <p> Hver dag</p>
+            <p> Hver dag </p>
             {tasksListReoccuring}
-            <p> Torsdag </p>
-            {tasksListThursday}
         </div>
         )
 

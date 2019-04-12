@@ -49,7 +49,6 @@ class CreateTask extends Component {
         </select>
 
         <p> Klokkeslett </p>
-
         <input id="time" name="time" type="time" placeholder="Text" />
 
         <p> Dato </p>
@@ -78,3 +77,38 @@ class CreateTask extends Component {
 
 
 export default CreateTask;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

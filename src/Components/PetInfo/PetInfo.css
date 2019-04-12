@@ -2,7 +2,7 @@
   box-sizing: border-box; }
 
 h1 {
-  color: #5D9095;
+  color: #485472;
   text-align: center;
   font-size: 30px;
   width: 100%; }
@@ -10,7 +10,7 @@ h1 {
 .pet-info {
   margin: 20px 0;
   padding: 20px;
-  border: 2px solid #5D9095; }
+  border: 2px solid #485472; }
   .pet-info .info-section {
     display: flex;
     flex-wrap: wrap; }
@@ -20,7 +20,7 @@ h1 {
     .pet-info .info-section h1, .pet-info .info-section h2, .pet-info .info-section h3, .pet-info .info-section h4, .pet-info .info-section h5, .pet-info .info-section h6 {
       width: 100%; }
     .pet-info .info-section .p-title {
-      color: #5D9095;
+      color: #485472;
       text-align: left; }
     .pet-info .info-section .p-info {
       color: black;

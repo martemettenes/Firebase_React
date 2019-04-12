@@ -2,43 +2,26 @@
   box-sizing: border-box; }
 
 h1 {
-  color: #5D9095;
+  color: #485472;
   text-align: center;
   font-size: 30px;
   width: 100%; }
 
-.navigation ul, .navigation ul li img {
-  height: 100%;
-  width: 100%; }
-
-.navigation {
-  width: 100vw;
-  height: 10vh;
-  background: #A0C0C4;
-  bottom: 0;
-  right: 0; }
-  .navigation ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-evenly; }
-    .navigation ul li {
-      height: 100%;
-      width: 20%;
-      padding: 15px; }
-      .navigation ul li img {
-        pointer-events: none; }
+nav {
+  background: #7D8DA9;
+  height: 80px; }
+  nav ul {
+    list-style: none; }
 
 .completed {
-  background: #A0C0C4; }
+  background: #7D8DA9; }
 
 .nav-clicked {
   animation: zoom 0.3s ease;
   animation-iteration-count: 1; }
 
 .nav-active {
-  background: #5D9095; }
+  background: #485472; }
 
 @keyframes zoom {
   0% { }

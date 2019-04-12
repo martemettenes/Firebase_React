@@ -1,7 +1,4 @@
-$padding: 10px;
-$col-darkblue: #5D9095;
-$col-medblue: #A0C0C4;
-$col-lightblue: #C8DCDE;
+@import '../variables.scss';
 
 .profile-info{
     display: flex;

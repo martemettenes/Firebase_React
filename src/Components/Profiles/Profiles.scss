@@ -1,7 +1,17 @@
 @import '../variables.scss';
 
 
-.dashboard{
+button{
+    display: block;
+    padding: $padding;
+    margin: $padding 0;
+    background: $col-darkblue;
+    color: white;
+    font-size: $m-font-s;
+    margin: $l-padding 0;
     width: 100%;
-    height: auto;
 }
+
+
+
+

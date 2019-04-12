@@ -41,6 +41,8 @@
         @extend %styling-shared;
         margin: $l-padding 0;
         width: 100%;
+        background: $col-darkblue;
+        color: white;
 
     }
 }

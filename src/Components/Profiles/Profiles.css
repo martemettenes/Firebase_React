@@ -2,11 +2,17 @@
   box-sizing: border-box; }
 
 h1 {
-  color: #5D9095;
+  color: #485472;
   text-align: center;
   font-size: 30px;
   width: 100%; }
 
-.dashboard {
-  width: 100%;
-  height: auto; }
+button {
+  display: block;
+  padding: 10px;
+  margin: 10px 0;
+  background: #485472;
+  color: white;
+  font-size: 16px;
+  margin: 20px 0;
+  width: 100%; }

@@ -1,3 +1,12 @@
+* {
+  box-sizing: border-box; }
+
+h1 {
+  color: #485472;
+  text-align: center;
+  font-size: 30px;
+  width: 100%; }
+
 .profile-info {
   display: flex;
   padding-bottom: 10px; }
@@ -15,7 +24,7 @@
 
 .profile-name {
   width: 100%;
-  border-bottom: 2px solid #5D9095;
+  border-bottom: 2px solid #485472;
   margin: 0; }
 
 .profile-dob {

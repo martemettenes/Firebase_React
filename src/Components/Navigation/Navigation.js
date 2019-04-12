@@ -1,50 +1,48 @@
 import React from 'react';
 import './Navigation.css';
+
 //Get components
 import NavigationItem from '../Navigation-item/Navigation-item.js';
 
 
-const Navigation = (props) => {
+const Navigation = () => {
     return (
-        <div id="navigation" className="navigation" >
+        <nav id="navigation" className="navigation" >
             <ul className="navigation-menu">
 
                 <NavigationItem
                 name="home"
-                toggleComponent={props.click}
                 src={require("../../img/doghouse.svg")}
-                alt="Dog house, home icon" />
+                alt="Dog house, home icon"
+                path="/home" />
 
                 <NavigationItem
                 name="tasks"
-                toggleComponent={props.click}
                 src={require("../../img/list.svg")}
-                alt="Dog house, home icon" />
+                alt="Dog house, home icon"
+                path="/dashboard" />
 
                 <NavigationItem
                 name="createTask"
-                toggleComponent={props.click}
                 src={require("../../img/add.svg")}
-                alt="Bell, create task icon" />
-
+                alt="Bell, create task icon"
+                path="/createtask"/>
+ 
                 <NavigationItem
                 name="pack"
-                toggleComponent={props.click}
                 src={require("../../img/pet.svg")}
-                alt="Dog house, home icon" />
+                alt="Dog house, home icon"
+                path="/profiles" />
 
                 <NavigationItem
                 name="settings"
-                toggleComponent={props.click}
                 src={require("../../img/tools.svg")}
-                alt="Dog house, home icon" />
+                alt="Dog house, home icon"
+                path="/settings" /> 
 
             </ul>
-        </div>
+        </nav>
     );
 }
 
 export default Navigation;
-
-
-// className={(this.state.isActivePage === 'pack'  ? 'active' : '')}

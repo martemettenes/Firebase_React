@@ -1,127 +1,141 @@
-import React, { Component } from 'react';
-// Style
-import './App.css';
-import './Components/Navigation/Navigation.css';
-// Components
-import Dashboard from './Components/Dashboard/Dashboard';
-import Navigation from './Components/Navigation/Navigation';
-import CreateTask from './Components/CreateTask/CreateTask';
-import Settings from './Components/Settings/Settings';
-import Profiles from './Components/Profiles/Profiles';
-import Home from './Components/Home/Home';
-// Get data
-import { tasks } from './tasks-data';
+import React, { Component, Fragment } from 'react';
+import * as firebase from "firebase";
+import { BrowserRouter, Link, Route, Switch as RouterSwitch } from "react-router-dom";
 
+// Style
+import "./App.css";
+
+// Components and Routes
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Navigation from "./Components/Navigation/Navigation";
+import CreateTask from "./Components/CreateTask/CreateTask";
+import Settings from "./Components/Settings/Settings";
+import Profiles from "./Components/Profiles/Profiles";
+import Home from "./Components/Home/Home";
+import Header from "./Components/Header/Header";
+
+// Get data
+import { tasks } from "./tasks-data";
 
 class App extends Component {
-  state = {
-    showHome: false,
-    showDashboard: true,
-    showCreateTask: false,
-    showPack: false,
-    showSettings: false,
-    tasks: [...tasks]
+state = {
+
+}
+
+  tasks;
+
+  writeTaskData(
+    id,
+    category,
+    note,
+    assigned,
+    pet,
+    day,
+    time,
+    repeat,
+    completedTask
+  ) {
+    const database = firebase.database().ref();
+    const tasksRef = database.child("tasks");
+
+    tasksRef.on("value", snap => {
+      const newTasks = snap.val();
+      this.setState({
+        tasks: newTasks
+      });
+    });
+
+    firebase
+      .database()
+      .ref("tasks/" + id)
+      .set({
+        id: id,
+        category: category,
+        note: note,
+        assigned: assigned,
+        pet: pet,
+        day: day,
+        time: time,
+        repeat: repeat,
+        completedTask: completedTask
+      });
   }
 
+  // componentDidMount(){
+  //   const database = firebase.database().ref();
+  //   const tasksRef = database.child('tasks');
 
-    // Method: create new task and add to state 
-    createTaskHandler = ( event ) => {
-      event.preventDefault();
-      const form = event.target;
-      const tasks = this.state.tasks;
-      const timestamp = Date.now();
+  //   tasksRef.on('value', snap => {
+  //     console.log('SNAP VALUE' + snap.val);
+  //     this.setState({
+  //       tasks: snap.val()
+  //     });
+  //   });
+  // }
 
-      const task = {
-        id: 'task' + timestamp,
-        category: form.type.value,
-        //alt: '',
-        note: form.note.value,
-        assigned: form.assigned.value,
-        pet: form.pet.value,
-        day: form.day.value,
-        time: form.time.value,
-        repeat: form.repeat.value,
-        completedTask: false
-      }
-  
-      tasks.push(task)
-  
-      // Set state
-      this.setState({ tasks : tasks });
-      console.log('this.state.tasks' + this.state.tasks);
-  
-      localStorage.setItem('task', JSON.stringify(task));
-      console.log(localStorage.getItem('task') );
+  // Method: create new task and add to state
+  createTaskHandler = event => {
+    event.preventDefault();
+    const form = event.target;
+    const timestamp = Date.now();
 
-      form.reset();
-    }
+    const task = {
+      id: "task-" + timestamp,
+      category: form.type.value,
+      //alt: '',
+      note: form.note.value,
+      assigned: form.assigned.value,
+      pet: form.pet.value,
+      day: form.day.value,
+      time: form.time.value,
+      repeat: form.repeat.value,
+      completedTask: false
+    };
+
+    // this.writeTaskData(task.id, task.category, task.note, task.assigned, task.pet, task.day, task.time, task.repeat, task.completedTask);
+
+    tasks.push(task);
+    this.setState({ tasks: tasks });
+
+    localStorage.setItem("task", JSON.stringify(task));
+
+    form.reset();
+  };
+
+  addNewProfile = event => {
+    event.preventDefault();
+    console.log("Clicked Pack Member Button");
+  };
 
   render() {
-
-    const toggleComponent = (event) => {
+    const toggleComponent = event => {
       let element = event.target;
       console.log(element);
 
-      element.classList.add('nav-clicked');
-          setTimeout(() => {
-            element.classList.remove('nav-clicked');
-          }, 310);
+      element.classList.add("nav-clicked");
+      setTimeout(() => {
+        element.classList.remove("nav-clicked");
+      }, 310);
+    };
 
-      switch(element.id) {
+    ///    RETURN    ///
 
-        case 'home':
-          this.setState({showHome: true, showDashboard: false, showCreateTask: false, showPack: false, showSettings: false})
-          break;
-  
-        case 'tasks':
-          this.setState({showHome: false, showDashboard: true, showCreateTask: false, showPack: false, showSettings: false})
-          break;
+    return (
+      <BrowserRouter>
+        <Fragment>
+        <Header />
+          <RouterSwitch>
+            <Route path="/" component={Home} exact />
+            <Route path="/home" component={Home} />
+            <Route path="/dashboard" components={Dashboard} />
+            <Route path="/createtask" component={CreateTask} />
+            <Route path="/settings" component={Settings} />
+          </RouterSwitch>
 
-        case 'createTask':
-          this.setState({showHome: false, showDashboard: false, showCreateTask: true, showPack: false, showSettings: false})
-          break;
-
-        case 'pack':
-          this.setState({showHome: false, showDashboard: false, showCreateTask: false, showPack: true, showSettings: false})
-          break;
-
-        case 'settings':
-          this.setState({showHome: false, showDashboard: false, showCreateTask: false, showPack: false, showSettings: true})
-          break;
-
-        default:
-          this.setState({showHome: true, showDashboard: false, showCreateTask: false, showPack: false, showSettings: false})
-      }
-    }
-
-/// Return ///
-
-return (
-      <div className="App">
-
-        <div className="content">
-          {(this.state.showHome === true) ? 
-            <Home  /> : null }
-          {(this.state.showDashboard === true) ? 
-            <Dashboard
-              tasks={this.state.tasks}  /> : null }
-          {(this.state.showCreateTask === true) ?
-            <CreateTask 
-              tasks={this.state.tasks}
-              createTask={this.createTaskHandler.bind(this)}
-            /> : null }
-          {(this.state.showSettings === true) ?
-            <Settings title="Instillinger" /> : null }
-            {(this.state.showPack === true) ?
-            <Profiles /> : null }
-        </div>
-
-        <Navigation click={(event) => toggleComponent(event)} />
-
-      </div>
+          
+        </Fragment>
+      </BrowserRouter>
     );
-
-    
   }
 }
 

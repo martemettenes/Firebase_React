@@ -21,7 +21,7 @@ class Profiles extends Component {
         <>
             {this.state.petsProfiles.map((petsProfiles) => {
                 return (
-                    <PetInfo
+                    <Profile
                     key={petsProfiles.name}
                     name={petsProfiles.name}
                     dob={petsProfiles.dob}
@@ -44,6 +44,7 @@ class Profiles extends Component {
         <div id="profiles-component" className="profiles">
             <h1> Flokken  </h1>
             {profiles}
+            <button onClick={this.props.click}> Lag Nytt flokkmedlem </button>
         </div>
         )
 
