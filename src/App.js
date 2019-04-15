@@ -123,7 +123,6 @@ state = {
     return (
       <BrowserRouter>
         <Fragment>
-        <Header />
           <RouterSwitch>
             <Route path="/" component={Home} exact />
             <Route path="/home" component={Home} />
@@ -131,8 +130,7 @@ state = {
             <Route path="/createtask" component={CreateTask} />
             <Route path="/settings" component={Settings} />
           </RouterSwitch>
-
-          
+          <Navigation />
         </Fragment>
       </BrowserRouter>
     );

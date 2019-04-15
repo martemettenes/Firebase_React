@@ -9,7 +9,7 @@ class Header extends Component {
     return (
       <header id="header" className="header">
         {/* <h1> Woof App </h1> */}
-        <Navigation />
+        
       </header>
     );
   }
